@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeController; 
+use App\Http\Controllers\StudentController; 
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -39,3 +40,17 @@ Route::delete('delete-employee/{id}',[EmployeeController::class, 'deleteEmployee
 
 // STUDENT ROUTES
 
+// get all Students
+Route::get('students',[StudentController::class, "getStudent"]);
+
+// get specific student
+Route::get('student/{id}',[StudentController::class, "getStudentById"]);
+
+// insert student
+Route::post('add-student',[StudentController::class, "addStudent"]);
+
+// delete student
+Route::delete('delete-student/{id}',[StudentController::class, 'deleteStdent']);
+
+// update student
+Route::put('update-student/{id}',[StudentController::class, "updateStudent"]); 
