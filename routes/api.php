@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\EmployeeController; 
-use App\Http\Controllers\StudentController; 
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TodoController;
 use App\Models\Employee;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -54,3 +55,24 @@ Route::delete('delete-student/{id}',[StudentController::class, 'deleteStdent']);
 
 // update student
 Route::put('update-student/{id}',[StudentController::class, "updateStudent"]); 
+
+
+// TODO ROUTES
+
+// get all todos 
+Route::get('todos',[TodoController::class, 'allTodos']);
+
+// get specific todo
+Route::get('todo/{id}',[TodoController::class, 'getTodoById']);
+
+// add new todo
+Route::post('add-todo',[TodoController::class, 'addTodo']);
+
+// delete specific todo
+Route::delete('delete-todo/{id}',[TodoController::class, 'deleteTodo']);
+
+// update todo
+Route::put('update-todo/{id}',[TodoController::class, 'updateTodo']);
+
+// delete all todos
+Route::delete('delete-all',[TodoController::class, 'deleteAll']);
